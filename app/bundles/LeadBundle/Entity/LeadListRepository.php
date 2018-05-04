@@ -689,9 +689,9 @@ class LeadListRepository extends CommonRepository
             }
 
             if ($object == 'lead') {
-                $column = isset($this->leadTableSchema[$details['field']]) ? $this->leadTableSchema[$details['field']] : false;
+                $column = isset($this->leadTableSchema[strtolower($details['field'])]) ? $this->leadTableSchema[strtolower($details['field'])] : false;
             } elseif ($object == 'company') {
-                $column = isset($this->companyTableSchema[$details['field']]) ? $this->companyTableSchema[$details['field']] : false;
+                $column = isset($this->companyTableSchema[strtolower($details['field'])]) ? $this->companyTableSchema[strtolower($details['field'])] : false;
             }
 
             // DBAL does not have a not() function so we have to use the opposite
